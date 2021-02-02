@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" method="upgrade" group="j2store">
+    <name>payro24 for J2Store</name>
+    <description>PLG_J2STORE_payro24_DESC</description>
+    <version>2.1.1</version>
+    <author>Developer: JMDMahdi, meysamrazmi, vispa, Publisher: payro24</author>
+    <authorUrl>https://payro24.ir</authorUrl>
+    <authorEmail>info@payro24.ir</authorEmail>
+    <creationDate>February 2019</creationDate>
+    <copyright>Copyright (C) 2020 payro24</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GPLv2 or later</license>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="api_key" type="text" size="60" label="API KEY" description="PLG_J2STORE_payro24_API_KEY_DESC"/>
+                <field name="sandbox" type="list" default="0" label="PLG_J2STORE_payro24_SANDBOX_LABEL" description="PLG_J2STORE_payro24_SANDBOX_DESC">
+                    <option value="yes">YES</option>
+                    <option value="no">NO</option>
+                </field>
+                <field name="currency" type="radio" default="rial" label="PLG_J2STORE_payro24_CURRENCY_LABEL" class="btn-group" description="PLG_J2STORE_payro24_CURRENCY_DESC">
+                    <option value="rial">PLG_J2STORE_payro24_CURRENCY_RIAL</option>
+                    <option value="toman">PLG_J2STORE_payro24_CURRENCY_TOMAN</option>
+                </field>
+                <field name="success_massage" type="textarea" rows="4" label="PLG_J2STORE_payro24_SUCCESS_MESSAGE_LABEL"
+                       description="PLG_J2STORE_payro24_HELP_MESSAGE"
+                       default="پرداخت شما با موفقیت انجام شد. کد رهگیری: {track_id}"/>
+                <field name="failed_massage" type="textarea" rows="4" label="PLG_J2STORE_payro24_ERROR_MESSAGE_LABEL"
+                       description="PLG_J2STORE_payro24_HELP_MESSAGE"
+                       default="پرداخت شما ناموفق بوده است. لطفا مجددا تلاش نمایید یا در صورت بروز اشکال با مدیر سایت تماس بگیرید."/>
+                <field name="help" type="spacer" label="PLG_J2STORE_payro24_HELP_MESSAGE"/>
+            </fieldset>
+        </fields>
+    </config>
+
+    <updateservers>
+        <server type="extension" priority="1" name="J2Store - payro24 for J2Store">https://static.payro24.ir/plugins/joomla/j2store-payro24-update.xml</server>
+    </updateservers>
+
+    <files>
+        <filename plugin="payment_payro24">payment_payro24.php</filename>
+        <folder>payment_payro24</folder>
+    </files>
+    <languages folder="language/fa-IR">
+        <language tag="fa-IR">fa-IR.plg_system_payment_payro24.ini</language>
+        <language tag="fa-IR">fa-IR.plg_system_payment_payro24.sys.ini</language>
+    </languages>
+    <languages folder="language/en-GB">
+        <language tag="en-GB">en-GB.plg_system_payment_payro24.ini</language>
+        <language tag="en-GB">en-GB.plg_system_payment_payro24.sys.ini</language>
+    </languages>
+</extension>
